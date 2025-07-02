@@ -1,10 +1,22 @@
 # Egypt Plate Input
 
+ويدجت جاهزة لإدخال لوحة أرقام عربية للسيارات المصرية، تتكون من ثلاث خانات حروف وخانة واحدة للأرقام، مع دعم للغة العربية والتحكم ا# Egypt Plate Input
+
 ويدجت جاهزة لإدخال لوحة أرقام عربية للسيارات المصرية، تتكون من ثلاث خانات حروف وخانة واحدة للأرقام، مع دعم للغة العربية والتحكم الكامل في الشكل والفاليديشن.
+
+## 📦 الاستخدام السريع
+
+أضف الباكدج في `pubspec.yaml`:
+
+
+dependencies:
+  egypt_plate_input: ^0.0.1
+
+
 
 ## 📦 الاستخدام
 
-```dart
+dart
 class PlateDemoScreen extends StatefulWidget {
   const PlateDemoScreen({super.key});
 
@@ -64,7 +76,7 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
               ),
               const SizedBox(height: 20),
 
-              ElevatedButton(
+              ElevatedButton(              
                 onPressed: () {
                   final plate =
                       "${field1Controller.text}${field2Controller.text}${field3Controller.text}-${numberController.text}";
@@ -82,13 +94,16 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
 
 
 ## Features
+✨ المميزات
+ديناميكي: ينتقل تلقائيًا للـ TextField التالي بعد إدخال حرف أو رقم
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+يدعم فقط الحروف العربية في الحقول الأولى
 
-## Getting started
+يدعم الرقم من 3 إلى 4 خانات فقط
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+قابل لتخصيص الألوان، النص، الhint، وفاليديشن داخلي
+
+يوفر onPlateChanged ليعرف المستخدم بتحديث اللّوحة مباشرة
 
 ## Usage
 
@@ -101,6 +116,10 @@ to `/example` folder.
 ```dart
 const like = 'sample';
 ```
+cd example
+flutter pub get
+flutter run
+
 
 ## Additional information
 

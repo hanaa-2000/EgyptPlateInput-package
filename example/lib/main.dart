@@ -64,10 +64,11 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade50,
         title: const Text('تجربة لوحة عربية'),
+        centerTitle: true,
       ),
       body: Center(
         child: Padding(
@@ -77,28 +78,41 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               EgyptPlateInput(
-                field1Controller: field1Controller,
+                          field1Controller: field1Controller,
                 field2Controller: field2Controller,
                 field3Controller: field3Controller,
                 numberController: numberController,
-                background: Colors.grey,
+                background: Colors.grey.shade200,
                 hintStyle: TextStyle(
                   fontSize: 16,
-                  color: Colors.black26,
+                  color: Colors.black54,
                   fontWeight: FontWeight.bold,
                 ),
+
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
                 onPlateChanged: (plate) {
                   log("اللوحة الجديدة: $plate");
                 },
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 32),
 
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  textStyle: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 onPressed: () {
                   final plate =
                       "${field1Controller.text}${field2Controller.text}${field3Controller.text}-${numberController.text}";

@@ -12,6 +12,7 @@ class EgyptPlateInput extends StatefulWidget {
     this.style,
     this.hintStyle,
     this.onPlateChanged,
+     this.hintText1, this.hintText2, this.hintText3, this.hintTextNumber,
   });
 
   final TextEditingController field1Controller;
@@ -22,6 +23,10 @@ class EgyptPlateInput extends StatefulWidget {
   final double width = 60;
   final double height = 60;
   final TextStyle? style;
+  final String? hintText1;
+    final String? hintText2;
+      final String? hintText3;
+        final String? hintTextNumber;
   final TextStyle? hintStyle;
   final void Function(String)? onPlateChanged;
 
@@ -123,7 +128,7 @@ class _CarNumberWidgetState extends State<EgyptPlateInput> {
                   errorText: _field1Error,
                   controller: widget.field1Controller,
                   focusNode: _focusNode1,
-                  hintText: "ت",
+                  hintText: widget.hintText1 ?? "ق",
                   onChanged: (_) {
                     _onChanged(
                       widget.field1Controller,
@@ -147,10 +152,11 @@ class _CarNumberWidgetState extends State<EgyptPlateInput> {
                       _focusNode1.requestFocus();
                     }
                   },
+                  
                   errorText: _field2Error,
                   controller: widget.field2Controller,
                   focusNode: _focusNode2,
-                  hintText: "س",
+                  hintText: widget.hintText2 ?? "س",
                   onChanged: (_) {
                     _onChanged(
                       widget.field2Controller,
@@ -177,7 +183,7 @@ class _CarNumberWidgetState extends State<EgyptPlateInput> {
 
                   controller: widget.field3Controller,
                   focusNode: _focusNode3,
-                  hintText: "ع",
+                  hintText: widget.hintText3 ?? "ع",
                   onChanged: (_) {
                     _onChanged(
                       widget.field3Controller,
@@ -228,7 +234,7 @@ class _CarNumberWidgetState extends State<EgyptPlateInput> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         errorText: _numberError,
-                        hintText: "1234",
+                        hintText: widget.hintTextNumber ?? "1234",
                         hintStyle:
                             widget.hintStyle ??
                             TextStyle(
