@@ -1,5 +1,6 @@
 name: egypt_plate_input
-description: "A new Flutter package project."
+description: "Flutter package for Egyptian plate input."
+repository: https://github.com/hanaa-2000/EgyptPlateInput-package.git
 version: 0.0.1
 homepage:
 
