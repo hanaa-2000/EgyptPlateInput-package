@@ -1,18 +1,85 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Egypt Plate Input
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+ويدجت جاهزة لإدخال لوحة أرقام عربية للسيارات المصرية، تتكون من ثلاث خانات حروف وخانة واحدة للأرقام، مع دعم للغة العربية والتحكم الكامل في الشكل والفاليديشن.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## 📦 الاستخدام
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+```dart
+class PlateDemoScreen extends StatefulWidget {
+  const PlateDemoScreen({super.key});
+
+  @override
+  State<PlateDemoScreen> createState() => _PlateDemoScreenState();
+}
+
+class _PlateDemoScreenState extends State<PlateDemoScreen> {
+  final field1Controller = TextEditingController();
+  final field2Controller = TextEditingController();
+  final field3Controller = TextEditingController();
+  final numberController = TextEditingController();
+
+  @override
+  void dispose() {
+    field1Controller.dispose();
+    field2Controller.dispose();
+    field3Controller.dispose();
+    numberController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text('تجربة لوحة عربية'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              EgyptPlateInput(
+                field1Controller: field1Controller,
+                field2Controller: field2Controller,
+                field3Controller: field3Controller,
+                numberController: numberController,
+                background: Colors.grey,
+                hintStyle: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black26,
+                  fontWeight: FontWeight.bold,
+                ),
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+                onPlateChanged: (plate) {
+                  log("اللوحة الجديدة: $plate");
+                },
+              ),
+              const SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  final plate =
+                      "${field1Controller.text}${field2Controller.text}${field3Controller.text}-${numberController.text}";
+                  print("رقم اللوحة: $plate");
+                },
+                child: const Text("طباعة اللوحة"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 ## Features
 
@@ -27,7 +94,7 @@ start using the package.
 
 dependencies:
   egypt_plate_input: ^1.0.0
-  
+
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
