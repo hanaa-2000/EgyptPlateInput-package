@@ -110,8 +110,8 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
 dependencies:
   egypt_plate_input: ^1.0.0
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+<!-- TODO: Include short and useful examples for package users. Add longer examples
+to `/example` folder. -->
 
 ```dart
 const like = 'sample';
@@ -123,6 +123,6 @@ flutter run
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
+<!-- TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+from the package authors, and more. -->
