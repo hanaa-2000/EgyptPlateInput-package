@@ -13,6 +13,13 @@ dependencies:
   egypt_plate_input: ^0.0.1
 
 
+```dart
+const like = 'sample';
+```
+cd example
+flutter pub get
+flutter run
+
 
 ## 📦 الاستخدام
 
@@ -105,24 +112,8 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
 
 يوفر onPlateChanged ليعرف المستخدم بتحديث اللّوحة مباشرة
 
-## Usage
-
-dependencies:
-  egypt_plate_input: ^1.0.0
-
-<!-- TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. -->
-
-```dart
-const like = 'sample';
-```
-cd example
-flutter pub get
-flutter run
 
 
-## Additional information
 
-<!-- TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more. -->
+
+
