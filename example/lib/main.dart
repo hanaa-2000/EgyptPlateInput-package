@@ -108,10 +108,13 @@ class _PlateDemoScreenState extends State<PlateDemoScreen> {
                     horizontal: 20,
                     vertical: 10,
                   ),
+
                   textStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
+
+                  
                 ),
                 onPressed: () {
                   final plate =
